@@ -14,6 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
 
@@ -191,7 +192,7 @@ a { color: inherit; text-decoration: none; }
 }
 .rj-hero-bg-img {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1920&q=80') center center / cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1200&q=70') center center / cover no-repeat;
 }
 .rj-hero-bg-img::after {
   content: ""; position: absolute; inset: 0;
@@ -296,17 +297,6 @@ a { color: inherit; text-decoration: none; }
   color: white; font-size: 12px; font-weight: 600; padding: 4px 12px;
   border-radius: 999px; letter-spacing: 0.04em;
 }
-
-/* ===== PHOTO GALLERY / VISUAL BREAK ===== */
-.rj-gallery {
-  padding: 0; overflow: hidden; display: grid;
-  grid-template-columns: repeat(4, 1fr); gap: 0;
-}
-.rj-gallery img {
-  width: 100%; height: 280px; object-fit: cover; display: block;
-  transition: transform .4s ease, filter .4s ease; filter: brightness(0.9);
-}
-.rj-gallery img:hover { transform: scale(1.05); filter: brightness(1); }
 
 /* ===== AREAS ===== */
 .rj-areas { background: linear-gradient(135deg, var(--rj-blue-900), var(--rj-blue-800)); color: var(--rj-white); }
@@ -456,7 +446,7 @@ input[type="range"]::-moz-range-thumb {
 .rj-cta-final { position: relative; overflow: hidden; text-align: center; padding: 120px 64px; }
 .rj-cta-final-bg {
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80') center center / cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=70') center center / cover no-repeat;
 }
 .rj-cta-final-bg::after {
   content: ""; position: absolute; inset: 0;
@@ -501,64 +491,162 @@ input[type="range"]::-moz-range-thumb {
 .rj-animate-scale.visible { opacity: 1; transform: scale(1); }
 
 /* ===== RESPONSIVE ===== */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .rj-section { padding: 80px 32px; }
-  .rj-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .rj-section { padding: 72px 24px; }
+  .rj-services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .rj-areas-grid { grid-template-columns: repeat(3, 1fr); }
-  .rj-hero-content { grid-template-columns: 1fr; gap: 40px; }
-  .rj-about-inner { grid-template-columns: 1fr; gap: 48px; }
-  .rj-why-inner { grid-template-columns: 1fr; gap: 48px; }
-  .rj-how-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .rj-hero-content { grid-template-columns: 1fr; gap: 36px; }
+  .rj-about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .rj-why-inner { grid-template-columns: 1fr; gap: 40px; }
+  .rj-how-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .rj-footer-grid { grid-template-columns: 1fr 1fr; }
-  .rj-gallery { grid-template-columns: repeat(2, 1fr); }
-  .rj-gallery img { height: 220px; }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  .rj-section { padding: 60px 20px; }
+  .rj-section { padding: 48px 16px; }
   .rj-nav-links { display: none; }
   .rj-nav-cta .rj-btn { display: none; }
   .rj-nav-phone-link { display: none; }
   .rj-hamburger { display: flex; }
-  .rj-hero { min-height: auto; padding-top: 72px; }
-  .rj-hero-content { padding: 40px 20px 60px; }
-  .rj-hero-stats { gap: 20px; flex-wrap: wrap; }
-  .rj-hero-stat-num { font-size: 26px; }
-  .rj-hero-form-card { padding: 24px 18px; }
-  .rj-hero-form-grid { grid-template-columns: 1fr; }
-  .rj-services-grid { grid-template-columns: 1fr; }
-  .rj-service-img { height: 180px; }
-  .rj-areas-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .rj-area-card { padding: 20px 16px; }
-  .rj-how-grid { grid-template-columns: 1fr; gap: 48px; }
+  .rj-nav-inner { height: 60px; padding: 0 16px; }
+  .rj-nav-logo { font-size: 18px; gap: 8px; }
+  .rj-nav-logo img { height: 32px; }
+  .rj-mobile-menu { top: 60px; }
+
+  /* Hero — tight, CTA-focused */
+  .rj-hero { min-height: auto; padding-top: 60px; }
+  .rj-hero-content { padding: 32px 16px 48px; gap: 28px; }
+  .rj-hero h1 { font-size: 32px; margin-bottom: 12px; }
+  .rj-hero-sub { font-size: 16px; margin-bottom: 24px; line-height: 1.5; }
+  .rj-hero-badge { font-size: 11px; padding: 6px 12px; margin-bottom: 16px; }
+  .rj-hero-btns { gap: 10px; margin-bottom: 28px; flex-direction: column; }
+  .rj-hero-btns .rj-btn { width: 100%; padding: 14px 20px; font-size: 15px; min-height: 48px; }
+  .rj-hero-stats { gap: 0; justify-content: space-between; padding-top: 20px; }
+  .rj-hero-stat-num { font-size: 22px; }
+  .rj-hero-stat-label { font-size: 11px; }
+
+  /* Hero form — compact */
+  .rj-hero-form-card { padding: 20px 16px; border-radius: 20px; }
+  .rj-hero-form-title { font-size: 20px; }
+  .rj-hero-form-sub { font-size: 13px; margin-bottom: 16px; }
+  .rj-hero-form-grid { grid-template-columns: 1fr; gap: 10px; }
+  .rj-input, .rj-textarea, .rj-select { padding: 14px 14px; min-height: 48px; font-size: 16px; }
+  .rj-label { font-size: 13px; margin-bottom: 4px; }
+  .rj-textarea { min-height: 80px; }
+
+  /* About — side-by-side images kept, text below */
+  .rj-about-img-float { width: 120px; height: 120px; bottom: -12px; right: -4px; border-width: 4px; }
+  .rj-about-flag { width: 48px; height: 48px; top: -8px; left: -8px; border-width: 3px; }
+  .rj-about-flag svg { width: 20px; height: 20px; }
+  .rj-about-text h2 { font-size: 26px; margin-bottom: 14px; }
+  .rj-about-text .rj-body-lg { font-size: 15px; margin-bottom: 14px; }
+  .rj-about-values { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .rj-about-value { padding: 14px; }
+  .rj-about-value h4 { font-size: 13px; }
+  .rj-about-value p { font-size: 12px; }
+
+  /* Services — horizontal card on mobile */
+  .rj-services-header { margin-bottom: 32px; }
+  .rj-services-header h2 { font-size: 26px !important; }
+  .rj-services-header .rj-body-lg { font-size: 15px; }
+  .rj-services-grid { grid-template-columns: 1fr; gap: 14px; }
+  .rj-service-card { display: flex; flex-direction: row; border-radius: var(--r-lg); }
+  .rj-service-img { width: 120px; min-width: 120px; height: auto; min-height: 100%; border-radius: var(--r-lg) 0 0 var(--r-lg); }
+  .rj-service-body { padding: 16px; flex: 1; }
+  .rj-service-body h3 { font-size: 17px; margin-bottom: 4px; }
+  .rj-service-body p { font-size: 13px; margin-bottom: 10px; line-height: 1.45; }
+  .rj-service-body ul { gap: 4px; }
+  .rj-service-body li { font-size: 12px; }
+  .rj-service-body li svg { width: 14px; height: 14px; }
+  .rj-service-tag { top: 8px; left: 8px; font-size: 10px; padding: 3px 8px; }
+
+  /* Areas — 2-column grid stays */
+  .rj-areas-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .rj-area-card { padding: 16px 12px; }
+  .rj-area-card svg { width: 22px; height: 22px; margin-bottom: 6px; }
+  .rj-area-card h3 { font-size: 14px; }
+  .rj-area-card p { font-size: 11px; }
+  .rj-areas-header h2 { font-size: 26px !important; }
+  .rj-areas-note { font-size: 14px; margin-top: 24px; }
+
+  /* Why Us */
+  .rj-why-point { padding: 12px; gap: 14px; }
+  .rj-why-point-icon { width: 44px; height: 44px; min-width: 44px; }
+  .rj-why-point-icon svg { width: 20px; height: 20px; }
+  .rj-why-point h3 { font-size: 16px; }
+  .rj-why-point p { font-size: 14px; }
+  .rj-why-img-main { aspect-ratio: 16/9; }
+  .rj-why-review-float { position: relative; bottom: 0; left: 0; margin-top: 16px; max-width: 100%; padding: 20px 16px; }
+  .rj-why-review-text { font-size: 14px; }
+  .rj-why-badge { top: -10px; right: 8px; width: 56px; height: 56px; }
+  .rj-why-badge-num { font-size: 18px; }
+  .rj-why-badge-label { font-size: 8px; }
+
+  /* How it works */
+  .rj-how-header { margin-bottom: 40px; }
+  .rj-how-grid { grid-template-columns: 1fr; gap: 40px; }
   .rj-how-grid::before { display: none; }
-  .rj-step-num { margin-top: -56px; }
-  .rj-calc-card { padding: 28px 20px; }
-  .rj-calc-grid { grid-template-columns: 1fr; }
-  .rj-calc-result-price { font-size: 36px; }
-  .rj-about-img-float { width: 140px; height: 140px; bottom: -16px; right: -8px; }
-  .rj-about-flag { width: 56px; height: 56px; top: -10px; left: -10px; }
-  .rj-about-flag svg { width: 24px; height: 24px; }
-  .rj-about-values { grid-template-columns: 1fr; }
-  .rj-why-review-float { position: relative; bottom: 0; left: 0; margin-top: 20px; max-width: 100%; }
-  .rj-why-badge { top: -12px; right: -8px; width: 64px; height: 64px; }
-  .rj-why-badge-num { font-size: 20px; }
-  .rj-footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .rj-gallery { grid-template-columns: 1fr 1fr; }
-  .rj-gallery img { height: 160px; }
+  .rj-step-num { width: 52px; height: 52px; font-size: 20px; margin: -62px auto 14px; }
+  .rj-how-card { padding: 40px 20px 28px; }
+  .rj-how-card-icon { width: 36px; height: 36px; margin-bottom: 12px; }
+  .rj-how-card h3 { font-size: 18px; }
+  .rj-how-card p { font-size: 14px; }
+
+  /* Calculator */
+  .rj-calc-card { padding: 24px 16px; }
+  .rj-calc-grid { grid-template-columns: 1fr; gap: 12px; }
+  .rj-calc-result-price { font-size: 32px; }
+  .rj-calc-result { padding: 20px 16px; }
+  .rj-range-value { font-size: 16px; }
+  input[type="range"]::-webkit-slider-thumb { width: 28px; height: 28px; }
+  input[type="range"]::-moz-range-thumb { width: 28px; height: 28px; }
+
+  /* FAQ */
+  .rj-faq-header { margin-bottom: 24px; }
+  .rj-faq-list { gap: 8px; }
+  .rj-faq-q { padding: 16px; font-size: 15px; min-height: 48px; gap: 12px; }
+  .rj-faq-a-inner { padding: 0 16px 16px; font-size: 14px; }
+
+  /* Final CTA */
+  .rj-cta-final { padding: 64px 16px 100px; }
+  .rj-cta-phone-big { font-size: 28px; gap: 8px; margin-bottom: 20px; }
+  .rj-cta-phone-big svg { width: 28px; height: 28px; }
+  .rj-cta-final h2 { font-size: 28px; }
+  .rj-cta-final p { font-size: 15px; margin-bottom: 24px; }
+  .rj-cta-final-btns { flex-direction: column; align-items: stretch; }
+  .rj-cta-final-btns .rj-btn { width: 100%; }
+
+  /* Footer */
+  .rj-footer { padding: 40px 16px 24px; }
+  .rj-footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .rj-footer-brand { font-size: 16px; }
+  .rj-footer-about { font-size: 13px; }
+  .rj-footer-bottom { font-size: 11px; flex-direction: column; text-align: center; }
+
+  /* Sticky CTA */
   .rj-sticky-cta { display: block; }
-  body { padding-bottom: 80px; }
-  .rj-cta-final { padding: 80px 20px 120px; }
+  body { padding-bottom: 76px; }
+
+  /* Kill desktop-only hover transforms on touch */
+  .rj-service-card:hover, .rj-area-card:hover, .rj-how-card:hover,
+  .rj-about-value:hover, .rj-why-point:hover { transform: none; }
+
+  /* Typography global */
+  .rj-display { font-size: clamp(24px, 7vw, 36px) !important; }
+  .rj-eyebrow { font-size: 11px; }
+  .rj-body-lg { font-size: 15px !important; }
 }
 
-@media (max-width: 480px) {
-  .rj-areas-grid { grid-template-columns: 1fr; }
-  .rj-hero-btns { flex-direction: column; }
-  .rj-hero-btns .rj-btn { width: 100%; }
-  .rj-cta-final-btns { flex-direction: column; align-items: center; }
-  .rj-cta-final-btns .rj-btn { width: 100%; max-width: 320px; }
-  .rj-gallery { grid-template-columns: 1fr; }
-  .rj-gallery img { height: 200px; }
+/* Small phones */
+@media (max-width: 380px) {
+  .rj-hero h1 { font-size: 28px; }
+  .rj-hero-stat-num { font-size: 20px; }
+  .rj-about-values { grid-template-columns: 1fr; }
+  .rj-service-img { width: 100px; min-width: 100px; }
+  .rj-footer-grid { grid-template-columns: 1fr; }
 }
 
 :focus-visible { outline: 2px solid var(--rj-blue-400); outline-offset: 2px; }
@@ -742,8 +830,8 @@ input[type="range"]::-moz-range-thumb {
 <section class="rj-section rj-about" id="about">
   <div class="rj-about-inner">
     <div class="rj-about-img-wrap rj-animate-left">
-      <img class="rj-about-img-main" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Moving team at work">
-      <img class="rj-about-img-float" src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=400&q=80" alt="Moving truck loaded">
+      <img class="rj-about-img-main" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=640&q=75" alt="RJ's Moving crew loading furniture into truck" loading="lazy" decoding="async" width="640" height="480">
+      <img class="rj-about-img-float" src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?w=240&q=75" alt="Moving truck loaded and ready" loading="lazy" decoding="async" width="240" height="240">
       <div class="rj-about-flag">
         <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
       </div>
@@ -775,14 +863,6 @@ input[type="range"]::-moz-range-thumb {
   </div>
 </section>
 
-<!-- ===== PHOTO GALLERY STRIP ===== -->
-<div class="rj-gallery">
-  <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=600&q=80" alt="Moving boxes in home" loading="lazy">
-  <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="New home interior" loading="lazy">
-  <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Packing supplies" loading="lazy">
-  <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="Beautiful Oregon home" loading="lazy">
-</div>
-
 <!-- ===== SERVICES ===== -->
 <section class="rj-section rj-services" id="services">
   <div class="rj-services-header rj-animate">
@@ -794,7 +874,7 @@ input[type="range"]::-moz-range-thumb {
 
     <div class="rj-service-card rj-animate-scale">
       <span class="rj-service-tag">Most Popular</span>
-      <img class="rj-service-img" src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=600&q=80" alt="Local moving service" loading="lazy">
+      <img class="rj-service-img" src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=400&q=75" alt="Local moving service in Oregon" loading="lazy" decoding="async" width="400" height="267">
       <div class="rj-service-body">
         <h3>Local Moving</h3>
         <p>Moves under 100 miles. We handle everything from loading to unloading with care.</p>
@@ -807,7 +887,7 @@ input[type="range"]::-moz-range-thumb {
     </div>
 
     <div class="rj-service-card rj-animate-scale">
-      <img class="rj-service-img" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80" alt="Long distance highway" loading="lazy">
+      <img class="rj-service-img" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&q=75" alt="Long distance moving across Oregon highways" loading="lazy" decoding="async" width="400" height="267">
       <div class="rj-service-body">
         <h3>Long Distance</h3>
         <p>Moving over 100 miles? Same professionalism, same care. We go wherever you need.</p>
@@ -820,7 +900,7 @@ input[type="range"]::-moz-range-thumb {
     </div>
 
     <div class="rj-service-card rj-animate-scale">
-      <img class="rj-service-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Packing boxes" loading="lazy">
+      <img class="rj-service-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=75" alt="Professional packing and boxing service" loading="lazy" decoding="async" width="400" height="267">
       <div class="rj-service-body">
         <h3>Packing & Unpacking</h3>
         <p>Professional wrapping, boxing, and bubble-wrapping. We treat your stuff like ours.</p>
@@ -833,7 +913,7 @@ input[type="range"]::-moz-range-thumb {
     </div>
 
     <div class="rj-service-card rj-animate-scale">
-      <img class="rj-service-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Storage facility" loading="lazy">
+      <img class="rj-service-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=75" alt="Storage services and transport" loading="lazy" decoding="async" width="400" height="267">
       <div class="rj-service-body">
         <h3>Storage Services</h3>
         <p>We load, transport to your chosen facility, and help retrieve when you're ready.</p>
@@ -846,7 +926,7 @@ input[type="range"]::-moz-range-thumb {
     </div>
 
     <div class="rj-service-card rj-animate-scale">
-      <img class="rj-service-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Hauling service" loading="lazy">
+      <img class="rj-service-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=75" alt="Junk removal and hauling service" loading="lazy" decoding="async" width="400" height="267">
       <div class="rj-service-body">
         <h3>Junk Removal & Hauling</h3>
         <p>Clearing clutter, old furniture, yard debris, or construction leftovers.</p>
@@ -859,7 +939,7 @@ input[type="range"]::-moz-range-thumb {
     </div>
 
     <div class="rj-service-card rj-animate-scale">
-      <img class="rj-service-img" src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80" alt="Special moving requests" loading="lazy">
+      <img class="rj-service-img" src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=400&q=75" alt="Custom moving and special requests" loading="lazy" decoding="async" width="400" height="267">
       <div class="rj-service-body">
         <h3>Special Requests</h3>
         <p>Driver hire, emergency towing, heavy lifting, or something unique — just ask.</p>
@@ -923,7 +1003,7 @@ input[type="range"]::-moz-range-thumb {
     </div>
     <div class="rj-why-visual rj-animate-right">
       <div class="rj-why-img-stack">
-        <img class="rj-why-img-main" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Happy family in new home" loading="lazy">
+        <img class="rj-why-img-main" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=480&q=75" alt="Happy family settling into their new Oregon home" loading="lazy" decoding="async" width="480" height="640">
         <div class="rj-why-badge">
           <div class="rj-why-badge-num">10+</div>
           <div class="rj-why-badge-label">Years</div>
